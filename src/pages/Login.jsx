@@ -2,9 +2,13 @@ import React, { useContext } from "react";
 
 import MyBookContext from "../context/MyBookContext";
 
-function Login() {
-  const { buttonDisabled, setEmail, setPassword, loginValidation } =
-    useContext(MyBookContext);
+function Login({ history }) {
+  const {
+    buttonDisabled,
+    setEmail,
+    setPassword,
+    loginValidation
+  } = useContext(MyBookContext);
 
   const handleChangeEmail = ({ target }) => {
     setEmail(target.value);
@@ -15,6 +19,8 @@ function Login() {
     setPassword(target.value);
     loginValidation();
   };
+
+  const handleClickLogin = () => history.push("/feed");
 
   return (
     <section>
@@ -30,7 +36,7 @@ function Login() {
         placeholder="Digite sua senha"
         onChange={handleChangePassword}
       />
-      <button type="button" disabled={buttonDisabled}>
+      <button type="button" disabled={buttonDisabled} onClick={handleClickLogin}>
         Fazer Login
       </button>
       <p>Ou</p>

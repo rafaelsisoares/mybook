@@ -12,9 +12,7 @@ export default function Provider({ children }) {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const loginValidation = () => {
-    console.log('loginValidation');
     const emailVerification = email.split("@");
-    console.log(emailVerification);
     if (
       emailVerification.length === EMAIL_VERIFICATION_LENGTH &&
       emailVerification[1].includes(".com") &&
