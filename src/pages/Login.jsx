@@ -1,14 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import MyBookContext from "../context/MyBookContext";
+import { resetUserOnline } from "../utils/users";
 
 function Login({ history }) {
   const {
     buttonDisabled,
     setEmail,
     setPassword,
-    loginValidation
+    loginValidation,
+    email,
+    password,
   } = useContext(MyBookContext);
+
+  useEffect(() => {
+    resetUserOnline();
+  }, []);
 
   const handleChangeEmail = ({ target }) => {
     setEmail(target.value);
@@ -21,6 +28,8 @@ function Login({ history }) {
   };
 
   const handleClickLogin = () => history.push("/feed");
+
+  const handleClickRegistration = () => history.push('/registration');
 
   return (
     <section>
@@ -40,7 +49,7 @@ function Login({ history }) {
         Fazer Login
       </button>
       <p>Ou</p>
-      <button type="button">Cadastre-se</button>
+      <button type="button" onClick={handleClickRegistration}>Cadastre-se</button>
     </section>
   );
 }

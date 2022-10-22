@@ -29,6 +29,8 @@ export default function Provider({ children }) {
     setPassword,
     buttonDisabled,
     loginValidation,
+    email,
+    password,
   };
   return (
     <MyBookContext.Provider value={contextValue}>
