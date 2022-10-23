@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
 
 import MyBookContext from "../context/MyBookContext";
-import { resetUserOnline } from "../utils/users";
+import { resetUserOnline, getUsers, setUserOnline } from "../utils/users";
+import "../styles/Login.css";
 
 function Login({ history }) {
   const {
@@ -27,12 +28,22 @@ function Login({ history }) {
     loginValidation();
   };
 
-  const handleClickLogin = () => history.push("/feed");
+  const handleClickLogin = () => {
+    const users = getUsers();
+    if (
+      users.some((user) => users.email === email && user.password === password)
+    ) {
+      setUserOnline(email, password);
+      history.push("/feed");
+    } else {
+      alert("E-mail e/ou senha incorretos");
+    }
+  };
 
-  const handleClickRegistration = () => history.push('/registration');
+  const handleClickRegistration = () => history.push("/registration");
 
   return (
-    <section>
+    <section className="login-container">
       <input
         type="email"
         name="email"
@@ -45,11 +56,22 @@ function Login({ history }) {
         placeholder="Digite sua senha"
         onChange={handleChangePassword}
       />
-      <button type="button" disabled={buttonDisabled} onClick={handleClickLogin}>
+      <button
+        type="button"
+        disabled={buttonDisabled}
+        onClick={handleClickLogin}
+        className="btn-login"
+      >
         Fazer Login
       </button>
       <p>Ou</p>
-      <button type="button" onClick={handleClickRegistration}>Cadastre-se</button>
+      <button
+        type="button"
+        onClick={handleClickRegistration}
+        className="btn-registration"
+      >
+        Cadastre-se
+      </button>
     </section>
   );
 }
