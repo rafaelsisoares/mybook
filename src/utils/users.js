@@ -1,17 +1,17 @@
 export const setNewUser = (objUser) => {
     const users = localStorage.getItem('users');
-    const newUsers = [...users, objUser];
-    localStorage.setItem('users', newUsers);
+    const newUsers = [...JSON.parse(users), objUser];
+    localStorage.setItem('users', JSON.stringify(newUsers));
 }
 
 export const getUsers = () => localStorage.getItem('users');
 
 export const setUserOnline = (email, password) => {
-    const users = localStorage.getItem('users');
+    const users = JSON.parse(localStorage.getItem('users'));
     const userOnline = users.find((user) => user.email === email && user.password === password);
-    localStorage.setItem('userOnline', userOnline);
+    localStorage.setItem('userOnline', JSON.stringify(userOnline));
 }
 
 export const getUserOnline = () => localStorage.getItem('userOnline');
 
-export const resetUserOnline = () => localStorage.setItem('userOnline', {});
+export const resetUserOnline = () => localStorage.setItem('userOnline', JSON.stringify({}));

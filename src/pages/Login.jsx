@@ -1,48 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
+import { Redirect } from "react-router-dom";
 
-import MyBookContext from "../context/MyBookContext";
-import { resetUserOnline, getUsers, setUserOnline } from "../utils/users";
+import useLogin from "../hooks/useLogin";
 import "../styles/Login.css";
 
-function Login({ history }) {
+function Login() {
   const {
+    handleChangeEmail,
+    handleChangePassword,
+    handleClickLogin,
+    handleClickRegistration,
+    redirect,
     buttonDisabled,
-    setEmail,
-    setPassword,
-    loginValidation,
-    email,
-    password,
-  } = useContext(MyBookContext);
-
-  useEffect(() => {
-    resetUserOnline();
-  }, []);
-
-  const handleChangeEmail = ({ target }) => {
-    setEmail(target.value);
-    loginValidation();
-  };
-
-  const handleChangePassword = ({ target }) => {
-    setPassword(target.value);
-    loginValidation();
-  };
-
-  const handleClickLogin = () => {
-    const users = getUsers();
-    if (
-      users.some((user) => users.email === email && user.password === password)
-    ) {
-      setUserOnline(email, password);
-      history.push("/feed");
-    } else {
-      alert("E-mail e/ou senha incorretos");
-    }
-  };
-
-  const handleClickRegistration = () => history.push("/registration");
-
-  return (
+  } = useLogin();
+  if (redirect.length > 0) return (<Redirect to={ redirect } />);
+    return (
     <section className="login-container">
       <input
         type="email"
@@ -58,7 +30,7 @@ function Login({ history }) {
       />
       <button
         type="button"
-        disabled={buttonDisabled}
+        disabled={!buttonDisabled}
         onClick={handleClickLogin}
         className="btn-login"
       >
