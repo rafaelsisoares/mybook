@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-import {
-  EMAIL_VERIFICATION_LENGTH,
+/* import {
   MIN_PASSWORD_LENGTH,
-} from "../utils/constants";
+} from "../utils/constants"; */
 import MyBookContext from "./MyBookContext";
 
 export default function Provider({ children }) {
@@ -11,7 +10,7 @@ export default function Provider({ children }) {
   const [password, setPassword] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const loginValidation = () => {
+  /* const loginValidation = () => {
     const emailVerification = email.split("@");
     if (
       emailVerification.length === EMAIL_VERIFICATION_LENGTH &&
@@ -22,15 +21,15 @@ export default function Provider({ children }) {
     } else {
       setButtonDisabled(true);
     }
-  };
+  }; */
 
   const contextValue = {
     setEmail,
     setPassword,
     buttonDisabled,
-    loginValidation,
     email,
     password,
+    setButtonDisabled,
   };
   return (
     <MyBookContext.Provider value={contextValue}>
