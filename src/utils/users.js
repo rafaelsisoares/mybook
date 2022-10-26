@@ -1,6 +1,6 @@
 export const setNewUser = (objUser) => {
-    const users = localStorage.getItem('users');
-    const newUsers = [...JSON.parse(users), objUser];
+    const users = JSON.parse(localStorage.getItem('users'));
+    const newUsers = [...users, objUser];
     localStorage.setItem('users', JSON.stringify(newUsers));
 }
 
