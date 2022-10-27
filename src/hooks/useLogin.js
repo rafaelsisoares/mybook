@@ -11,6 +11,9 @@ export default function useLogin() {
 
   useEffect(() => {
     resetUserOnline();
+    const users = JSON.parse(getUsers());
+    console.log(users);
+    (users === null) && localStorage.setItem('users', JSON.stringify([]));
   }, []);
 
   useEffect(() => {
