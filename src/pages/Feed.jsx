@@ -11,7 +11,10 @@ export default function Feed() {
   return (
     <section>
         <Header />
-        <h1>Feed</h1>
+        <h1 className='space'>{' '}</h1>
+        <p>keep calm</p>
+        <p>and</p>
+        <strong>Let's race</strong>
     </section>
   )
 }

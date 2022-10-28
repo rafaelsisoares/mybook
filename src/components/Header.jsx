@@ -1,17 +1,17 @@
 import React from "react";
+
 import { getUserOnline } from "../utils/users";
+import "../styles/Header.css";
 
 export default function Header() {
   const userOnline = JSON.parse(getUserOnline());
-  const { name, image } = userOnline;
-  console.log(image);
+  const { name } = userOnline;
   return (
-    <header>
-      <div>
+    <header className="header-container">
+      <div className="logo">
         <h4>MyBook</h4>
       </div>
-      <div>
-        <img src={image} alt={`Imagem de ${name}`} />
+      <div className="user-div">
         <p>{name}</p>
         <button type="button">Sair</button>
       </div>
