@@ -3,7 +3,7 @@ import React from "react";
 import { getUserOnline } from "../utils/users";
 import "../styles/Header.css";
 
-export default function Header() {
+export default function Header({ history }) {
   const userOnline = JSON.parse(getUserOnline());
   const { name } = userOnline;
   return (
@@ -13,7 +13,12 @@ export default function Header() {
       </div>
       <div className="user-div">
         <p>{name}</p>
-        <button type="button">Sair</button>
+        <button
+          type="button"
+          onClick={() => history.push("/")}
+        >
+          Sair
+        </button>
       </div>
     </header>
   );

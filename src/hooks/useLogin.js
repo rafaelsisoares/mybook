@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { MIN_PASSWORD_LENGTH } from "../utils/constants";
 import { resetUserOnline, getUsers, setUserOnline } from "../utils/users";
+import { getPosts } from "../utils/posts";
 
 export default function useLogin() {
   const [email, setEmail] = useState("");
@@ -12,8 +13,9 @@ export default function useLogin() {
   useEffect(() => {
     resetUserOnline();
     const users = JSON.parse(getUsers());
-    console.log(users);
+    const posts = JSON.parse(getPosts());
     (users === null) && localStorage.setItem('users', JSON.stringify([]));
+    (posts === null) && localStorage.setItem('posts', JSON.stringify([]));
   }, []);
 
   useEffect(() => {
