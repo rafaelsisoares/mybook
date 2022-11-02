@@ -6,6 +6,7 @@ import { getUserOnline } from '../utils/users';
 export default function useNewPost() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [posts, setPosts] = useState(JSON.parse(getPosts()));
   const [redirect, setRedirect] = useState("");
   const user = JSON.parse(getUserOnline());
 
@@ -25,11 +26,20 @@ export default function useNewPost() {
     };
     setNewPost(newPost);
     setRedirect("/feed");
-  }
+  };
+
+  const handleClickLike = ({ target: { id } }) => {
+    const newPostsList = [...posts];
+    newPostsList[+id].likes += 1;
+    setPosts(newPostsList);
+    localStorage.setItem('posts', JSON.stringify(posts));
+  };
+
   return {
     handleChangeText,
     handleChangeTitle,
     handleClickSubmitPost,
-    redirect
+    handleClickLike,
+    redirect,
   };
 }
