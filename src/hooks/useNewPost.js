@@ -23,6 +23,7 @@ export default function useNewPost() {
         title,
         text,
         likes: 0,
+        comments: [],
     };
     setNewPost(newPost);
     setRedirect("/feed");
