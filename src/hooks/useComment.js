@@ -4,7 +4,6 @@ import { getUserOnline } from "../utils/users";
 
 export default function useComment() {
   const [comment, setComment] = useState("");
-  // const [posts, setPosts] = useState(JSON.parse(getPosts()));
 
   const handleChangeComment = ({ target: { value } }) => setComment(value);
 

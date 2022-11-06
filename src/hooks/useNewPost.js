@@ -6,7 +6,6 @@ import { getUserOnline } from "../utils/users";
 export default function useNewPost() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  // const [posts, setPosts] = useState(JSON.parse(getPosts()));
   const [redirect, setRedirect] = useState("");
   const user = JSON.parse(getUserOnline());
 
