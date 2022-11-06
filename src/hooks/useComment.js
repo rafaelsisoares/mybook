@@ -4,19 +4,23 @@ import { getUserOnline } from "../utils/users";
 
 export default function useComment() {
   const [comment, setComment] = useState("");
-  const [posts, setPosts] = useState(JSON.parse(getPosts()));
+  // const [posts, setPosts] = useState(JSON.parse(getPosts()));
 
   const handleChangeComment = ({ target: { value } }) => setComment(value);
 
   const handleClickSubmitComment = ({ target: { name } }) => {
+    const posts = JSON.parse(getPosts());
     const user = JSON.parse(getUserOnline());
-    const newPostsList = [...posts];
+    const targetPost = posts.find((post) => post.id === +name);
     const newComment = {
         user: user.name,
         comment,
     };
-    newPostsList[+name].comments.push(newComment);
-    setPosts(newPostsList);
+    const updatedPost = {
+      ...targetPost,
+      comments: [...targetPost.comments, newComment],
+    }
+    posts.splice(+name, 1, updatedPost);
     console.log(posts);
     localStorage.setItem("posts", JSON.stringify(posts));
     setComment("");

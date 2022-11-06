@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { FaThumbsUp } from "react-icons/fa";
 
 import Header from "../components/Header";
+import Comments from "../components/Comments";
 import useNewPost from "../hooks/useNewPost";
 import useComment from "../hooks/useComment";
 import { getPosts } from "../utils/posts";
@@ -19,7 +20,7 @@ export default function Feed({ history }) {
     <section>
       <Header history={history} />
       <h1 className="space"> </h1>
-      {posts.map(({ user, title, text, likes, id }) => (
+      {posts.map(({ user, title, text, likes, id, comments }) => (
         <div key={id} className="post-container">
           <strong>{user}</strong>
           <br />
@@ -37,6 +38,15 @@ export default function Feed({ history }) {
               Comentar
             </button>
           </div>
+          {
+            comments.length > 0 && (
+              <div>
+                <p>Comentários:</p>
+                <Comments comments={comments} />
+              </div>
+            )
+          }
+          <hr />
         </div>
       ))}
       <button type="button" onClick={() => history.push("/new-post")}>
