@@ -1,37 +1,39 @@
 .registration-container {
-    box-shadow: 1px 1px 1px 1px grey;
-    border-radius: 5px;
-    display: flex;
-    flex-flow: column wrap;
-    margin: 150px auto;
-    padding: 10px;
-    text-align: center;
-    width: 40%;
+  background-color: rgb(224, 239, 230);
+  box-shadow: 1px 1px 1px 1px grey;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 150px auto;
+  padding: 10px;
+  text-align: center;
+  width: 40%;
 }
 
-.registration-container input , .btn-new-user {
-    margin-bottom: 10px;
-    padding: 5px;
+.registration-container input,
+.btn-new-user {
+  margin-bottom: 10px;
+  padding: 5px;
 }
 
 .btn-new-user {
-    background-color: blue;
-    border: 1px solid blue;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
-    transition: transform 100ms;
+  background-color: blue;
+  border: 1px solid blue;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  transition: transform 100ms;
 }
 
 .btn-new-user:disabled {
-    background-color: rgb(194, 194, 250);
-    border: 1px solid rgb(194, 194, 250);
+  background-color: rgb(194, 194, 250);
+  border: 1px solid rgb(194, 194, 250);
 }
 
 .btn-new-user:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .btn-new-user:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

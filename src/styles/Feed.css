@@ -1,0 +1,35 @@
+.post-container {
+  background-color: rgb(224, 239, 230);
+  border-radius: 5px;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem darkgray;
+  margin: 10px auto;
+  padding: 10px;
+  width: 45%;
+}
+
+.post-title,
+.comment-title {
+  text-align: center;
+}
+
+.input-comment {
+  display: block;
+  width: 99%;
+}
+
+.btn-like,
+.btn-comment {
+  margin: 5px auto;
+  padding: 3px;
+  width: 100%;
+}
+
+.btn-new-post {
+  margin: 10px auto;
+  width: 20%;
+}
+
+.btn-new-post button {
+  padding: 3px;
+  width: 100%;
+}

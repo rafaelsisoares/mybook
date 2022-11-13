@@ -8,6 +8,7 @@ import useNewPost from "../hooks/useNewPost";
 import useComment from "../hooks/useComment";
 import { getPosts } from "../utils/posts";
 import { getUserOnline } from "../utils/users";
+import "../styles/Feed.css";
 
 export default function Feed({ history }) {
   const userOnline = JSON.parse(getUserOnline());
@@ -24,34 +25,48 @@ export default function Feed({ history }) {
         <div key={id} className="post-container">
           <strong>{user}</strong>
           <br />
-          <h3>{title}</h3>
+          <h3 className="post-title">{title}</h3>
           <p>{text}</p>
-          <button type="button" id={id} onClick={handleClickLike}>
+          <button
+            type="button"
+            id={id}
+            onClick={handleClickLike}
+            className="btn-like"
+          >
             <FaThumbsUp /> {`${likes}`}
           </button>
+          <hr />
           <div>
             <textarea
               placeholder="Deixe seu comentário"
               onChange={handleChangeComment}
+              className="input-comment"
             />
-            <button type="button" name={id} onClick={handleClickSubmitComment}>
+            <button
+              type="button"
+              name={id}
+              onClick={handleClickSubmitComment}
+              className="btn-comment"
+            >
               Comentar
             </button>
           </div>
-          {
-            comments.length > 0 && (
-              <div>
-                <p>Comentários:</p>
-                <Comments comments={comments} />
-              </div>
-            )
-          }
-          <hr />
+          {comments.length > 0 && (
+            <div>
+              <p className="comment-title">Comentários:</p>
+              <Comments comments={comments} />
+            </div>
+          )}
         </div>
       ))}
-      <button type="button" onClick={() => history.push("/new-post")}>
-        Nova Postagem
-      </button>
+      <div className="btn-new-post">
+        <button
+          type="button"
+          onClick={() => history.push("/new-post")}
+        >
+          Nova Postagem
+        </button>
+      </div>
     </section>
   );
 }
