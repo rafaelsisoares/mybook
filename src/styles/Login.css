@@ -17,8 +17,8 @@
 
 .btn-login,
 .btn-registration {
-  background-color: blue;
-  border: 1px solid blue;
+  background-color: seagreen;
+  border: 1px solid seagreen;
   border-radius: 5px;
   color: white;
   padding: 5px;
@@ -45,7 +45,7 @@
 }
 
 .btn-registration:hover {
-  background-color: blue;
+  background-color: seagreen;
   color: white;
   cursor: pointer;
 }
