@@ -8,21 +8,23 @@ export default function useComment() {
   const handleChangeComment = ({ target: { value } }) => setComment(value);
 
   const handleClickSubmitComment = ({ target: { name } }) => {
-    const posts = JSON.parse(getPosts());
-    const user = JSON.parse(getUserOnline());
-    const targetPost = posts.find((post) => post.id === +name);
-    const newComment = {
+    if (comment.length > 0) {
+      const posts = JSON.parse(getPosts());
+      const user = JSON.parse(getUserOnline());
+      const targetPost = posts.find((post) => post.id === +name);
+      const newComment = {
         user: user.name,
         comment,
-    };
-    const updatedPost = {
-      ...targetPost,
-      comments: [...targetPost.comments, newComment],
+      };
+      const updatedPost = {
+        ...targetPost,
+        comments: [...targetPost.comments, newComment],
+      };
+      posts.splice(+name, 1, updatedPost);
+      console.log(posts);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      setComment("");
     }
-    posts.splice(+name, 1, updatedPost);
-    console.log(posts);
-    localStorage.setItem("posts", JSON.stringify(posts));
-    setComment("");
   };
 
   return {
