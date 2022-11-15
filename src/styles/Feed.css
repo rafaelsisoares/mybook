@@ -63,3 +63,7 @@
   color: white;
   cursor: pointer;
 }
+
+.post-content {
+  text-align: justify;
+}

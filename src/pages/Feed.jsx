@@ -24,9 +24,9 @@ export default function Feed({ history }) {
       {posts.map(({ user, title, text, likes, id, comments }) => (
         <div key={id} className="post-container">
           <strong>{user}</strong>
-          <br />
+          <hr />
           <h3 className="post-title">{title}</h3>
-          <p>{text}</p>
+          <p className="post-content">{text}</p>
           <button
             type="button"
             id={id}
