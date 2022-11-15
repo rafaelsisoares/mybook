@@ -25,3 +25,15 @@
   display: flex;
   padding: 10px;
 }
+
+.btn-logout {
+  background-color: white;
+  border: 1px solid seagreen;
+  border-radius: 1rem;
+  color: seagreen;
+  margin-left: 5px;
+}
+
+.btn-logout:hover {
+  cursor: pointer;
+}

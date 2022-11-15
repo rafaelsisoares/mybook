@@ -16,6 +16,7 @@ export default function Header({ history }) {
         <button
           type="button"
           onClick={() => history.push("/")}
+          className="btn-logout"
         >
           Sair
         </button>

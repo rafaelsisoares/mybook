@@ -34,8 +34,21 @@
 }
 
 .btn-new-post button {
+  border: 1px solid seagreen;
+  border-radius: 1rem;
   padding: 3px;
+  transition: background-color 600ms, transform 100ms;
   width: 100%;
+}
+
+.btn-new-post button:hover {
+  background-color: seagreen;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-new-post button:active {
+  transform: scale(0.98);
 }
 
 .btn-like {
