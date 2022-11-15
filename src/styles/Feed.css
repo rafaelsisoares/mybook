@@ -1,0 +1,82 @@
+.post-container {
+  background-color: rgb(224, 239, 230);
+  border-radius: 5px;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem darkgray;
+  margin: 10px auto;
+  padding: 10px;
+  width: 45%;
+}
+
+.post-title,
+.comment-title {
+  text-align: center;
+}
+
+.input-comment {
+  font-family: sans-serif;
+  display: block;
+  padding: 5px;
+  width: 98%;
+}
+
+.btn-like,
+.btn-comment {
+  border-radius: 0.3rem;
+  margin: 5px auto;
+  padding: 3px;
+  width: 100%;
+  transition: transform 100ms;
+}
+
+.btn-new-post {
+  margin: 10px auto;
+  width: 20%;
+}
+
+.btn-new-post button {
+  border: 1px solid seagreen;
+  border-radius: 1rem;
+  padding: 3px;
+  transition: background-color 600ms, transform 100ms;
+  width: 100%;
+}
+
+.btn-new-post button:hover {
+  background-color: seagreen;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-new-post button:active {
+  transform: scale(0.98);
+}
+
+.btn-like {
+  background-color: seagreen;
+  border: 1px solid seagreen;
+  color: white;
+}
+
+.btn-like:hover {
+  cursor: pointer;
+}
+
+.btn-like:active,
+.btn-comment:active {
+  transform: scale(0.98);
+}
+
+.btn-comment {
+  border: 1px solid seagreen;
+  transition: background-color 600ms, transform 100ms;
+}
+
+.btn-comment:hover {
+  background-color: seagreen;
+  color: white;
+  cursor: pointer;
+}
+
+.post-content {
+  text-align: justify;
+}

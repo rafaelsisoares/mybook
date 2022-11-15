@@ -1,0 +1,38 @@
+.form-container {
+  background-color: rgb(224, 239, 230);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px grey;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 100px auto;
+  padding: 10px;
+  width: 45%;
+}
+
+.title-post,
+.content-post {
+  margin-bottom: 0.5rem;
+  padding: 5px;
+}
+
+.content-post {
+  font-family: sans-serif;
+  height: 5rem;
+}
+
+.btn-submit-post {
+  background-color: seagreen;
+  border: 1px solid seagreen;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  transition: transform 100ms;
+}
+
+.btn-submit-post:active {
+  transform: scale(0.98);
+}
+
+.page-title {
+  text-align: center;
+}

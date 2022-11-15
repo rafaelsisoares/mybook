@@ -1,0 +1,39 @@
+.header-container {
+  background-color: seagreen;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  margin-bottom: 10px;
+  padding: 1px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+}
+
+.space {
+  margin-bottom: 100px;
+}
+
+.user-div {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+}
+
+.btn-logout {
+  background-color: white;
+  border: 1px solid seagreen;
+  border-radius: 1rem;
+  color: seagreen;
+  margin-left: 5px;
+}
+
+.btn-logout:hover {
+  cursor: pointer;
+}
