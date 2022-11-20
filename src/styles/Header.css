@@ -2,6 +2,7 @@
   background-color: seagreen;
   color: white;
   display: flex;
+  height: 60px;
   justify-content: space-between;
   left: 0;
   margin-bottom: 10px;
@@ -17,7 +18,7 @@
 }
 
 .space {
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
 
 .user-div {
