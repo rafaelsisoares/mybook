@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 
 import Header from "../components/Header";
 import useNewPost from "../hooks/useNewPost";
+import { getUserOnline } from "../utils/users"
 import "../styles/NewPost.css";
 
 export default function NewPost({ history }) {
@@ -13,6 +14,9 @@ export default function NewPost({ history }) {
     redirect,
   } = useNewPost();
 
+  const userOnline = JSON.parse(getUserOnline());
+
+  if (Object.keys(userOnline).length === 0) return <Redirect to="/" />;
   if (redirect.length > 0) return <Redirect to={redirect} />;
   return (
     <section>
