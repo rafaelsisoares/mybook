@@ -101,6 +101,10 @@
   }
 
   .input-comment {
-    width: 96%;
+    align-content: center;
   }
+
+  .input-comment textarea {
+    height: 1.5rem;
+  };
 }
