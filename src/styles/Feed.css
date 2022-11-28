@@ -13,8 +13,13 @@
 }
 
 .input-comment {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.input-comment textarea {
   font-family: sans-serif;
-  display: block;
+  height: 2rem;
   padding: 5px;
   width: 98%;
 }

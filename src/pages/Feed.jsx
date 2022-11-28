@@ -36,11 +36,10 @@ export default function Feed({ history }) {
             <FaThumbsUp /> {`${likes}`}
           </button>
           <hr />
-          <div>
+          <div className="input-comment">
             <textarea
               placeholder="Deixe seu comentário"
               onChange={handleChangeComment}
-              className="input-comment"
             />
             <button
               type="button"
