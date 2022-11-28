@@ -1,24 +1,36 @@
 .not-found-message {
-    font-size: 2rem;
-    left: 130px;
-    padding: 10px;
-    position: fixed;
-    text-align: center;
-    top: 250px;
-    width: 80%;
+  font-size: 2rem;
+  left: 130px;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  top: 250px;
+  width: 80%;
 }
 
 .not-found-404 {
-    font-size: 12rem;
-    opacity: 0.2;
-    text-align: center;
+  font-size: 12rem;
+  opacity: 0.2;
+  text-align: center;
 }
 
 .link {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  .not-found-404 {
+    font-size: 10rem;
+  }
+
+  .not-found-message {
+    font-size: 1.6rem;
+    left: 40px;
+    top: 175px;
+  }
 }
