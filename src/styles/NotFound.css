@@ -4,12 +4,12 @@
   padding: 10px;
   position: fixed;
   text-align: center;
-  top: 250px;
+  top: 200px;
   width: 80%;
 }
 
 .not-found-404 {
-  font-size: 12rem;
+  font-size: 10rem;
   opacity: 0.2;
   text-align: center;
 }
