@@ -24,6 +24,7 @@ Obs. O projeto segue em desenvolvimento
 3. Curtir postagens,
 4. Comentar nas postagens,
 5. Validação de usuário logado
+6. Design responsivo
 <hr />
 
 ### Para executar esse projeto

@@ -13,8 +13,13 @@
 }
 
 .input-comment {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.input-comment textarea {
   font-family: sans-serif;
-  display: block;
+  height: 2rem;
   padding: 5px;
   width: 98%;
 }
@@ -79,4 +84,27 @@
 
 .post-content {
   text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+  .post-container {
+    width: 75%;
+  }
+
+  .btn-new-post {
+    height: 2rem;
+    width: 75%;
+  }
+
+  .btn-new-post button{
+    height: 100%;
+  }
+
+  .input-comment {
+    align-content: center;
+  }
+
+  .input-comment textarea {
+    height: 1.5rem;
+  };
 }
